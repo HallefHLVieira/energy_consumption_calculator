@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
-  <title>Consumption Calculator</title>
+  <title>Calculadora de consumo</title>
 </head>
 <body>
   <div id="container">
@@ -15,14 +15,18 @@
     <p><strong>Preencha os campos abaixo corretamente e te diremos quantos R$ por mês seu eletro irá consumir.</strong></p>
 
     <div id="inputs">
-      <input type="number" placeholder="Potência do eletro - EX: 60w">
-      <input type="number" placeholder="Quantas horas de uso diário">
-      <input type="number" placeholder="Quantos dias de uso no mês?">
-      <input type="text" placeholder="Preço do KWh no papel de energia">
+      <input id="power" type="number" placeholder="Potência do eletro - EX: 60w">
+      <input id="totalHours" type="number" placeholder="Quantas horas de uso diário" min="0.1" max="24" maxlength="2">
+      <input id="totalDays" type="number" placeholder="Quantos dias de uso no mês?" min="1" max="30" maxlength="2">
+      <input id="price" type="text" placeholder="Preço do KWh no papel de energia">
 
-    <button>Calcular Consumo</button>
+      <button id="calculate" onclick="consumptionCalculate()">Calcular Consumo</button>
+
     </div>
+
+    <h3 id="response"></h3>
   </div>
 
 </body>
+<script src="scripts.js"></script>
 </html>
